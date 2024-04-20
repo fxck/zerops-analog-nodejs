@@ -17,16 +17,16 @@ A Nodejs Analog example for Zerops which you can deploy in 2 simple steps.
 
 ```yaml
 project:
-   name: analog
+  name: analog
 
-  services:
-   - hostname: analognode
-     type: nodejs@18
-     buildFromGit: https://github.com/fxck/zerops-analog-nodejs
-     ports:
-       - port: 3000
-     enableSubdomainAccess: true
-     minContainers: 1
+services:
+  - hostname: analognode
+    type: nodejs@18
+    buildFromGit: https://github.com/fxck/zerops-analog-nodejs
+    ports:
+      - port: 3000
+    enableSubdomainAccess: true
+    minContainers: 1
 ```
 
 If you still find yourself stuck in the process join our [Discord community](https://discord.gg/5ptAqtpyvh).
