@@ -30,7 +30,7 @@ import { CodeBlockComponent } from '../code-block/code-block.component';
         <div class="mt-6">
           <div class="flex justify-center">
             <a
-              href="https://app.zerops.io/recipe/analog-static"
+              href="https://app.zerops.io/recipe/analog-nodejs"
               target="_blank"
               class="text-lg"
             >

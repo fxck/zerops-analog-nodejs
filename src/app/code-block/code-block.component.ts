@@ -40,15 +40,15 @@ project:
 
 services:
   - hostname: app
-    type: static
+    type: nodejs@20
     enableSubdomainAccess: true
-    buildFromGit: https://github.com/zeropsio/recipe-analog-static
+    buildFromGit: https://github.com/zeropsio/recipe-analog-nodejs
     `;
     this.importyaml = importproject;
 
     const zerops = `
 zerops:
-  - setup: static
+  - setup: app
     build:
       base: nodejs@20
       buildCommands:
@@ -57,9 +57,13 @@ zerops:
       deployFiles:
         - public
         - node_modules
-        - dist/analog/public/~
+        - dist
     run:
-      base: static
+      base: nodejs@20
+      ports:
+        - port: 3000
+          httpSupport: true
+      start: node dist/analog/server/index.mjs
     `;
     
     this.zeropsyaml = zerops;
